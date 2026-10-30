@@ -1,0 +1,15 @@
+[Unit]
+Description=Envio de e-mails da agenda de estudos
+After=network.target mysql.service agenda-estudos.service
+
+[Service]
+Type=simple
+User=dog_alfredo
+WorkingDirectory=/home/dog_alfredo/AgenteDeEstudoLocal
+EnvironmentFile=/etc/agenda-estudos.conf
+ExecStart=/home/dog_alfredo/AgenteDeEstudoLocal/.venv/bin/python /home/dog_alfredo/AgenteDeEstudoLocal/envia_emails.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

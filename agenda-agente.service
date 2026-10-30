@@ -1,0 +1,15 @@
+[Unit]
+Description=Trabalhador do agente de estudo (Ollama)
+After=network.target mysql.service ollama.service agenda-estudos-api.service
+
+[Service]
+Type=simple
+User=dog_alfredo
+WorkingDirectory=/home/dog_alfredo/AgenteDeEstudoLocal
+EnvironmentFile=/etc/agenda-estudos.conf
+ExecStart=/home/dog_alfredo/AgenteDeEstudoLocal/.venv/bin/python /home/dog_alfredo/AgenteDeEstudoLocal/agente_trabalhador.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

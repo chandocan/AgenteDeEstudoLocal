@@ -1,0 +1,18 @@
+# Ambiente e cache
+.venv/
+__pycache__/
+*.pyc
+
+# Dados e logs locais (nunca versionar)
+agenda_estudos.db
+agenda_estudos.db-shm
+agenda_estudos.db-wal
+*.log
+
+# Exportações de aulas e dados locais
+aula*.md
+.exportados/
+
+# Configuração local (se algum dia migrar para o diretório do projeto)
+.env
+agenda-estudos.conf

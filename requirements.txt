@@ -1,0 +1,5 @@
+# Dependências do AgenteDeEstudoLocal
+mysql-connector-python
+fastapi
+uvicorn
+markdown

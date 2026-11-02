@@ -1,0 +1,34 @@
+# Exemplo de configuração — copie para /etc/agenda-estudos.conf (ou .env) e preencha
+# Nunca comite o arquivo real.
+
+# --- Banco MySQL ---
+AGENDA_DB_HOST=localhost
+AGENDA_DB_PORT=3306
+AGENDA_DB_NAME=agenda_estudos
+AGENDA_DB_USER=agenda_app
+AGENDA_DB_PASSWORD=SENHA_DO_USUARIO_MYSQL
+
+# --- API REST (opcionais) ---
+AGENDA_API_HOST=127.0.0.1
+AGENDA_API_PORT=8800
+AGENDA_API_TOKEN=token_obrigatorio_para_producao
+
+# --- Agente local (Ollama) ---
+AGENDA_MODELO=qwen3.5:4b
+AGENDA_OLLAMA_URL=http://127.0.0.1:11434
+AGENDA_AGENTE_INTERVALO=30
+AGENDA_AGENTE_TIMEOUT=600
+AGENDA_AGENTE_NOME=agente-local
+
+# --- E-mails via SMTP (Gmail exige senha de app: myaccount.google.com/apppasswords) ---
+AGENDA_SMTP_HOST=smtp.gmail.com
+AGENDA_SMTP_PORT=587
+AGENDA_SMTP_USER=SEU_EMAIL@gmail.com
+AGENDA_SMTP_PASSWORD=SENHA_DE_APP
+AGENDA_EMAIL_DE=SEU_EMAIL@gmail.com
+AGENDA_EMAIL_PARA=SEU_EMAIL@gmail.com
+AGENDA_EMAIL_INTERVALO=60
+AGENDA_EMAIL_TENTATIVAS=5
+AGENDA_EMAIL_LOTE=20
+
+Repo: configuração carregada via EnvironmentFile do systemd ou `source`.
